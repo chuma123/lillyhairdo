@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lilly Hair do | House-Call Hairdresser</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HERO */
+header {
+  background:
+    linear-gradient(rgba(58,111,76,0.75), rgba(58,111,76,0.75)),
+    url("images/lilly_hero1.png") center/cover no-repeat;
+  color: #fff;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.8rem;
+}
+
+header p {
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.8rem;
+  background: #d4a373;
+  color: #000;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+  padding: 3.5rem 1.5rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #3a6f4c;
+}
+
+/* ABOUT */
+.about {
+  text-align: center;
+  max-width: 800px;
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #f7f7f7;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.service-card h3 {
+  color: #3a6f4c;
+  margin-bottom: 0.6rem;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* MODALS */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  max-width: 420px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  background: #3a6f4c;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 3.5rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header>
+  <h1>Lilly Hair-do</h1>
+  <p>House-Call Hairdresser | Natural Hairstyles & Synthetic Braids</p>
+  <a class="btn" href="https://wa.me/+27835798667">Book via WhatsApp</a>
+</header>
+
+<!-- ABOUT -->
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    I am a professional house-call hairdresser specializing in natural hair
+    care and synthetic braids. I bring the salon experience to your home,
+    ensuring comfort, convenience, and beautiful results every time.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h2>Services</h2>
+  <div class="services">
+    <div class="service-card" onclick="openModal('natural')">
+      <h3>Natural Hairstyles</h3>
+      <p>Twists, cornrows & treatments</p>
+    </div>
+
+    <div class="service-card" onclick="openModal('braids')">
+      <h3>Synthetic Braids</h3>
+      <p>Knotless, box braids & locs</p>
+    </div>
+
+    <div class="service-card" onclick="openModal('kids')">
+      <h3>Kids Hairstyles</h3>
+      <p>Gentle & neat styles</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="images/lilly1.png" alt="Natural hairstyle">
+    <img src="images/lilly2.png" alt="Synthetic braids">
+    <img src="images/lilly3.png" alt="Knotless braids">
+    <img src="images/lilly4.png" alt="Kids hairstyle">
+    <img src="images/lilly5.png" alt="Cornrows">
+    <img src="images/lilly6.png" alt="Passion twists">
+  </div>
+</section>
+
+<!-- MODALS -->
+<div id="natural" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('natural')">&times;</span>
+    <h3>Natural Hairstyles</h3>
+    <p>Wash & treatment, twists, cornrows, and protective natural styles.</p>
+  </div>
+</div>
+
+<div id="braids" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('braids')">&times;</span>
+    <h3>Synthetic Braids</h3>
+    <p>Knotless braids, box braids, faux locs, and passion twists.</p>
+  </div>
+</div>
+
+<div id="kids" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('kids')">&times;</span>
+    <h3>Kids Hairstyles</h3>
+    <p>Comfortable, child-friendly styles done with care.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Natural Touch Hair | House-Call Hairdresser</p>
+</footer>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+window.onclick = function(event) {
+  document.querySelectorAll(".modal").forEach(modal => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+};
+</script>
+
+</body>
+</html>
+
